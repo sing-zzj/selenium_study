@@ -19,6 +19,12 @@ def screen(driver):
     element.screenshot('picture.png')     # 特定元素截图
 
     driver.quit()
+ 
+# 实现网页滚动
+def scroll(driver):
+    for i in range(0, 10000, 100):
+        driver.execute_script('window.scrollBy(0, {})'.format(i))
+        time.sleep(1.5)
 
 if __name__ == '__main__':
     Chrome_driver = webdriver.Chrome()
