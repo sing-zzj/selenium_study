@@ -22,8 +22,22 @@ def screen(driver):
  
 # 实现网页滚动
 def scroll(driver):
+    
+    """
+    #滑动到页面中间处
+    driver.execute_script("window.scrollTo(0,document.body.scrollHeight/2)")
+    time.sleep(3)
+
+    #滑动到页面最下方
+    driver.execute_script("window.scrollTo(0,document.body.scrollHeight)")
+    time.sleep(3)
+
+    #滑动到页面最上方
+    driver.execute_script("window.scrollTo(0,0)")
+    time.sleep(3)
+    """
     for i in range(0, 10000, 100):
-        driver.execute_script('window.scrollBy(0, {})'.format(i))
+        driver.execute_script('window.scrollBy(0, {})'.format(i))    # 当scrollBy 参数为负数时，意思是网页往上移动
         time.sleep(1.5)
 
 if __name__ == '__main__':
