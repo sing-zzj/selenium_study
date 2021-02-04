@@ -8,6 +8,22 @@ def open_html(driver):
     time.sleep(5)
     driver.quit()  # 关闭打开的网页
 
+# 查找元素
+"""
+4.1. 通过ID查找元素
+4.2. 通过Name查找元素
+4.3. 通过XPath查找元素
+login_form = driver.find_element_by_xpath("/html/body/form[1]")
+login_form = driver.find_element_by_xpath("//form[1]")
+4.4. 通过链接文本获取超链接
+continue_link = driver.find_element_by_link_text('Continue')
+continue_link = driver.find_element_by_partial_link_text('Conti')
+4.5. 通过标签名查找元素
+4.6. 通过Class name 定位元素
+4.7. 通过CSS选择器查找元素
+"""
+
+
 # 在网页内截图
 def screen(driver):
     driver.get('https://github.com/sing-zzj?tab=repositories')
@@ -39,6 +55,7 @@ def scroll(driver):
     for i in range(0, 10000, 100):
         driver.execute_script('window.scrollBy(0, {})'.format(i))    # 当scrollBy 参数为负数时，意思是网页往上移动
         time.sleep(1.5)
+        
 
 if __name__ == '__main__':
     Chrome_driver = webdriver.Chrome()
